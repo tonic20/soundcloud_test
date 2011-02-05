@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "UTF-8"}
+    = stylesheet_link_tag 'styles', :media => 'screen, projection'
+    /[if IE]
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+
+    = javascript_include_tag "http://www.google.com/jsapi"
+    :javascript
+      google.load("jquery", "1.4");
+      google.load("jqueryui", "1.8");
+    = javascript_include_tag "rails", "application"
+    = csrf_meta_tag
+  %body
+    .menu
+      = render_navigation
+    .content
+      = content_tag :h1, yield(:title)
+      = yield
+
