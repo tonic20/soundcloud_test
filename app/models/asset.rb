@@ -1,6 +1,10 @@
 class Asset < ActiveRecord::Base
-  belongs_to :user
-
   has_attached_file :attach
+
+  default_scope order("created_at desc")
+
+  def url
+    attach.url(:original, false)
+  end
 end
 

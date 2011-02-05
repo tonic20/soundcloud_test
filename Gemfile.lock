@@ -102,7 +102,7 @@ DEPENDENCIES
   capistrano
   compass (~> 0.10.6)
   haml (~> 3.0.25)
-  inherited_resources (~> 1.2.1)
+  inherited_resources
   jquery-rails
   paperclip (~> 2.3)
   rails (= 3.0.3)

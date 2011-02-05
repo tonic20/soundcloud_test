@@ -1,2 +1,64 @@
 @import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+
+@import "fileuploader";
+
+$item-width: 850px;
+
+body {
+  padding: 20px;
+  color: #444;
+  font-family: 'lucida grande', 'arial', 'verdana';
+  font-size: 14px;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 18px;
+  @include text-shadow;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h1, h2 {
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+p {
+  margin: 10px 0px;
+  line-height: 1.3em;
+}
+
+ul.assets {
+  width: $item-width;
+
+  li {
+    @include border-radius(5px);
+    background-color: #eee;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+
+    label {
+      color: #777;
+    }
+
+    .url a {
+      font-size: 12px;
+    }
+
+    a.delete {
+      float: right;
+      position: relative;
+      top: -20px;
+    }
+  }
+}
+
+#file-uploader {
+  margin-top: 40px;
+}
 

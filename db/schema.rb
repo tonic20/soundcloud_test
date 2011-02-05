@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110205075200) do
+ActiveRecord::Schema.define(:version => 20110205091219) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -20,12 +20,7 @@ ActiveRecord::Schema.define(:version => 20110205075200) do
     t.string   "attach_content_type"
     t.integer  "attach_file_size"
     t.datetime "attach_updated_at"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "title"
   end
 
 end

@@ -1,2 +1,18 @@
-%h1 Home page
+%h1
+  Back-end Developer Challenge
+
+%p
+  Source codes:
+  %a{:href => "https://github.com/tonic20/soundcloud_test"} https://github.com/tonic20/soundcloud_test
+  %br
+  Author:
+  %a{:href => "http://kopylov.net"} Anton Kopylov
+
+%h2
+  Select file
+
+#file-uploader
+
+%ul.assets
+  = render :partial => "assets/asset", :collection => @assets
 
