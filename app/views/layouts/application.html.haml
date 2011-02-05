@@ -13,8 +13,6 @@
     = javascript_include_tag "rails", "application"
     = csrf_meta_tag
   %body
-    .menu
-      = render_navigation
     .content
       = content_tag :h1, yield(:title)
       = yield
