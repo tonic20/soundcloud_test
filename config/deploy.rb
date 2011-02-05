@@ -20,6 +20,7 @@ role :web, "penzasoft.com"
 role :app, "penzasoft.com"
 role :db,  "penzasoft.com", :primary => true
 
+after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 
 namespace :deploy do

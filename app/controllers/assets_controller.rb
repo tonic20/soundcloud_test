@@ -1,5 +1,5 @@
 class AssetsController < ApplicationController
-  protect_from_forgery :except => [:create, :destroy]
+  protect_from_forgery :except => [:create, :update, :destroy]
 
   def create
     filename = params[:qqfile]
@@ -15,6 +15,13 @@ class AssetsController < ApplicationController
 
     render :layout => "respond_to_parent"
   end
+
+  def update
+    @asset = Asset.find(params[:id])
+    @asset.update_attributes(params[:asset])
+    render :text => ""
+  end
+
 
   def destroy
     @asset = Asset.find(params[:id])

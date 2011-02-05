@@ -1,10 +1,12 @@
 %li{:data => {:id => asset.id}}
   .title
     %label Title:
-    = asset.title
+    %span
+      = asset.title
+    = link_to "edit", "#", :class => "edit"
   .url
     %label Url:
     = link_to "#{asset.url}", asset.url if asset.attach.file?
 
-  = link_to "Delete", asset_path(asset), :method => :delete, :confirm => "Are you sure?", :class => "delete", :remote => true
+  = link_to "delete", asset_path(asset), :method => :delete, :confirm => "Are you sure?", :class => "delete", :remote => true
 
