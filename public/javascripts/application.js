@@ -27,7 +27,7 @@ $(function () {
       var current_item = $assets.find("li[data-upload_id="+id+"]");
       current_item.attr("data-id", response["id"]);
       current_item.find(".url label").text("Url:");
-      current_item.find(".url span").text(response["url"]);
+      current_item.find(".url span").html("<a href=\""+response["url"]+"\">"+response["url"]+"</a>");
       current_item.find(".cancel_upload").replaceWith("<a rel=\"nofollow\" data-remote=\"true\" data-method=\"delete\" data-confirm=\"Are you sure?\" class=\"delete\" href=\"/assets/"+ response["id"] +"\">delete</a>");
 
       $.ajax({
