@@ -1,12 +1,20 @@
-%li{:data => {:id => asset.id}}
+%li{:data => {:id => asset.id, :upload_id => asset.upload_id}}
   .title
     %label Title:
     %span
       = asset.title
     = link_to "edit", "#", :class => "edit"
   .url
-    %label Url:
-    = link_to "#{asset.url}", asset.url if asset.attach.file?
+    %label
+      - if asset.new_record?
+        Progress:
+      - else
+        Url:
+    %span
+      = link_to "#{asset.url}", asset.url if asset.attach.file?
 
-  = link_to "delete", asset_path(asset), :method => :delete, :confirm => "Are you sure?", :class => "delete", :remote => true
+  - unless asset.new_record?
+    = link_to "delete", asset_path(asset), :method => :delete, :confirm => "Are you sure?", :class => "delete", :remote => true
+  - else
+    = link_to "cancel", "#", :class => "cancel_upload"
 

@@ -8,11 +8,48 @@
   Author:
   %a{:href => "http://kopylov.net"} Anton Kopylov
 
+%p
+  = link_to "show full spec", "#", :class => "spec"
+
+.spec
+  %p
+    Design and implement a system that will accept a multipart form upload (say, containing an audio file) while displaying a percentage progress.
+
+  %p
+    The basic HTML design should look like:
+    %ul
+      %li Display form with file input field
+      %li Display a title text field
+      %li Display a status text paragraph "select file"
+      %li Optionally display a submit button
+
+  %p
+    Specification:
+    %ul
+      %li When the user picks a file from their computer and the form is submitted, the upload begins.
+      %li While uploading, the status text paragraph should be updating with the current percentage complete at least once every 2  seconds.
+      %li While uploading, the user should be able to enter text into the title text field.
+      %li When the upload completes, the status text should display the path on the server to the saved file, and the current value of the title text field should be posted to the server. The response to the form post request should display both the title and the path to the file.
+
+  %p
+    Requirements:
+    %ul
+      %li The upload should honor proxy settings on the browser
+      %li The system must functional behind a firewall that blocks all but port 80
+      %li The server must support at least 2 concurrent uploads from different users
+      %li Any technology that can be web deployed to IE, Firefox, Safari, Chrome (iPad/iPhone is optional) on any platform is supported
+
 %h2
   Select file
 
-#file-uploader
+.form
+  %label Title
+  %input{:type => :text, :name => :title}
+  .uploader.qq-upload-button Upload a file
 
 %ul.assets
   = render :partial => "assets/asset", :collection => @assets
+
+.item_template
+  = render :partial => "assets/asset", :object => Asset.new
 

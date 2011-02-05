@@ -9,11 +9,13 @@ class AssetsController < ApplicationController
 
     @asset = Asset.new
     @asset.title = params[:title]
+    @asset.upload_id = params[:upload_id]
     @asset.attach = File.new("#{Rails.root.to_s}/tmp/#{filename}")
+
     @asset.save
     File.unlink("#{Rails.root}/tmp/#{filename}")
 
-    render :layout => "respond_to_parent"
+    render :json => {:id => @asset.id, :url => @asset.url}
   end
 
   def update

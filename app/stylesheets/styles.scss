@@ -15,22 +15,31 @@ body {
 }
 
 h1 {
-  font-size: 18px;
   @include text-shadow;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0px;
 }
 
 h2 {
   font-size: 16px;
-}
-
-h1, h2 {
   font-weight: bold;
-  margin: 20px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 p {
   margin: 10px 0px;
   line-height: 1.3em;
+}
+
+div.spec {
+  display: none;
+  background-color: #eee;
+  padding: 20px 20px;
+}
+
+.form {
+  margin-bottom: 20px;
 }
 
 ul.assets {
@@ -50,7 +59,7 @@ ul.assets {
       font-size: 12px;
     }
 
-    a.delete {
+    a.delete, a.cancel_upload {
       float: right;
       position: relative;
       top: -20px;
@@ -58,7 +67,7 @@ ul.assets {
   }
 }
 
-#file-uploader {
-  margin-top: 40px;
+.item_template {
+  display: none;
 }
 
